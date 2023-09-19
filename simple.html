@@ -1,0 +1,141 @@
+<html>
+<head>
+  <link rel="stylesheet" href="../css/book.css">
+
+ <!script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+ <!script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+<title>jTech| textArt</title>
+<body>
+<style>
+pre {
+    font-family: 'Courier New', 'monospace';
+    font-size: 8px;
+    line-height: 1;  
+}
+</style>
+
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Image to Text Art</h1>
+                <h6>Simple Version</h6> 
+            </header>
+            <article>
+
+    <h2 class="chapter-title">ASCII Image</h2>
+	<p>This work relies on the work of Full-Stack Web Developer, 
+Open-Source Contributor, Seasoned Speaker, named Jonathan Petitcolas, 
+whose code for converting an image into ASCII art masterpiece is given at <a href="https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html">https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html.</a>
+	</p>
+	<p>We change the output maximum size to 62 : 62, and the value of grayRamp in the simplified version to " .:-=+*#%@"; .
+	</p>
+<dd>
+<br><br>
+	<h3>Modified Petitcolas's Ascii Art Converter</h3> 
+
+	<input 
+		type="file" 
+		name="picture" />
+
+	<button 
+		onclick="copyASCII()">Copy
+	</button>
+
+	<button 
+		onclick="newLoad()">New
+	</button>
+
+	<button 
+		onclick="window.open('textImage.html')">Detailed
+	</button>
+    	<canvas 
+		id="preview" 
+		style="display: none;">
+	</canvas>
+
+
+</dd>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+<dd>
+<strong>Example:</strong><br>
+</dd>
+
+<pre id="ascii">
+                                @                                
+   ::                          =%.                          ::   
+ :::::                        *@@@=                        ::::: 
+  :::::                       *##*#                       :::::. 
+::.::.::.    :             .@%%##%%*@              :.   .::.::.::
+ ::::::.::. .:::::%-       *@::::::-@+       +#:::::. .::.:::::: 
+ .:::::::::::::             @*:+@@++*             ::.:::::.::::. 
+ .:::.:::.:::*:-+           @:#= :+::          .#--+:::.:::.:::. 
+   .::::::::.:::::::. :. :  ..:=%-:-   . .: .:::::::.::::::::.   
+   .:::::::::::.:.:::::+#:::-#::-::+-:::#=:::::.:::::::::::::.   
+     ::::::::::::::::::*+::::#-#++-*::::++::.:::::::::::::::     
+      .:.:::::.:::::::::::::::::@-::::::::::::::::.:::::...      
+           .:::::::.:.:::::::::::::::::::::.:.:::::::.           
+             :::.:::::::::.%+#*%@#**#@::::::::::.:::             
+              .:::::::::::::#%#%@%#@%::::::::::.:::              
+                .:::::.:::::::::::::::::::::::::.                
+                   ...::::: ::::::::: ::.::...                   
+                      =  ..+-::...::#*.. .=                      
+                   ::::%+...*#==%++##...*#::::.                  
+                 .:::::::@%:....#..+.:%%:::::::.                 
+                 :::::::.:.:#%+.@.+%*:::.:::::::.                
+                 .:::::.:::*::-...=::*::.::::::.                 
+                          #@@=..@-.=@@@.                         
+                  +-*%   +%@....:....@@*   +%**                  
+                 :-.*@@@@% %-...*...=# %@@@@%==#                 
+                   %=+@@@@ :@%..:..#@: @@@@%+*                   
+                   .     ::::::@.@:::::-.    .                   
+                         ::::::.%.::::::                         
+                           ..:::::::::                           
+                                :                                
+</pre>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+
+ <script>
+      function myFunction(event, node) {
+        console.log("You just clicked this node:", node);
+      }
+    </script>
+		<script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/raphael/raphael.js"></script>
+    <script src="../js/flowchart.js"></script>
+		<script>
+		$('#chart').flowChart();
+		</script>
+
+    <script src="index2.js"></script>
+
+<script>
+function copyASCII() {
+  const copyText = document.getElementById("ascii").textContent;
+  navigator.clipboard.writeText(copyText);
+  alert("Copied!");
+}
+
+function newLoad() {
+location.reload();
+}
+
+</script>
+
+
+</body>
+</html>

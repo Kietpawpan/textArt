@@ -1,0 +1,180 @@
+﻿<html>
+<head>
+  <link rel="stylesheet" href="../css/book.css">
+
+ <!script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+ <!script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+<title>jTech| textArt</title>
+<body>
+
+<style type='text/css'> 
+pre {
+    font-family: 'Courier New', 'monospace';
+    font-size: 8px;
+    line-height: 1;
+}
+</style>
+
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Image to Text Art</h1>
+                <h6>Detailed Version</h6> 
+            </header>
+            <article>
+
+    <h2 class="chapter-title">ASCII Image</h2>
+	<p>This work relies on the work of Full-Stack Web Developer, 
+Open-Source Contributor, Seasoned Speaker, named Jonathan Petitcolas, 
+whose code for converting an image into ASCII art masterpiece is given at <a href="https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html">https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html.</a>
+	</p>
+	<p>We change the output maximum size to 62 : 62, and the value of grayRamp in the simplified version to " .:-=+*#%@"; .
+	</p>
+<br><br>
+<dd>
+	<h3>Petitcolas's Ascii Art Converter</h3> 
+
+	<input 
+		type="file" 
+		name="picture" />
+
+	<button 
+		onclick="copyASCII()">Copy
+	</button>
+
+	<button 
+		onclick="newLoad()">New
+	</button>
+
+	<button 
+		onclick="window.open('simple.html')">Simplified
+	</button>
+    	<canvas 
+		id="preview" 
+		style="display: none;">
+	</canvas>
+
+
+</dd>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<dd>
+<strong>Example:</strong><br>
+</dd>
+
+<pre id="ascii">
+______++__+__--_+_+_???????]]]]]]][[}[}}}-+++++++++~~&lt;&lt;~+&lt;+vLj+~+&lt;&gt;&gt;ii!/XYXcj}~!ll
+_+++_+++++++++++++~~_?---?-?]]]]]][[}}}}+~~~~~~&lt;&lt;~&lt;&lt;&gt;&gt;&gt;+~{|_&gt;&gt;&gt;&gt;&gt;~~&gt;!!!l!llllIIIII
++~~_+~~++&lt;~~~~~~~+~~~------??]]]?][}}}]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;&lt;&lt;&gt;&gt;iii~&gt;&gt;&gt;&gt;&gt;&gt;iii!!!!ll~jUJJCLLLLC
++~&lt;~+~~-1&lt;~~~~~~~~~~~+---???????[}}}[&lt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;i&gt;iiii!!&lt;&lt;&lt;&gt;iiii!lll!lllllIII;I!&gt;~+&lt;
+~~&lt;&gt;&lt;(1+&gt;&gt;&lt;&lt;&lt;~&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;~------?]}}}]&gt;ii&gt;&gt;&gt;&lt;&lt;&gt;iii!!!!!_((1-&lt;&lt;i!!ll)Yf&gt;IlIII;;;;::::;
+&lt;&lt;~~~&lt;&lt;~~&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+?---?[}[+i!!i~ud##h&amp;*Zv+ll[jt|()1}]&gt;ill&gt;Uku!III;;;;;_YCCLL
+~++____+_+~&lt;&lt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;???-+&lt;i!!l!&lt;O%B8hC&amp;88%%8bjrjrf)){}}]&lt;llllIIIII;;;;;;::;!&lt;&gt;
+++_--???-_+~&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+?i!!!!!!!x8%MmXt[[(vmM&amp;%%dnt|()1}}[?&gt;llli&gt;i!lI;::::::;_uQ
++_-?]]]]?-_+&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;?_i!!!!!!jB8Z)-~&gt;!lli[voBB@&amp;c/|()1{{[?!!&lt;-[-&lt;!I;;:::;[JJr{
++_-??]]]?-_+&lt;&gt;&gt;&gt;&lt;&gt;&gt;&lt;&lt;&lt;+_+!!!!!!i|BBor}_~~&lt;&lt;&lt;&lt;~-ja@BB*rt/()11{[-!i~_~ilI;;;;II:::~|
+~+_-???--_+~&lt;&gt;&gt;&gt;&lt;&gt;&lt;~++_ill!!i_~_mBBaf{?~~&lt;&gt;i!i+]c%@BBwvrjjf|(1[i!!!llIIIII!;!{CZww
+&lt;~~+++__++~&lt;&gt;&gt;&lt;~&lt;~+__~!!l!~-&gt;~&gt;{W@BnjvJJj[)zLf}1-n8aQp+?]_&lt;ii!!!!&lt;-&gt;&gt;&gt;i!ll&gt;fXUufbp
+&lt;&lt;&lt;~~~~~~~~-+lIl!~+_!li&gt;__~+!&gt;?uB*W)f0kZc]-u0OXj_[OnmM]!!!!llllll&lt;_]}{_l;II;;;+n0q
++~~&lt;&lt;&lt;&lt;&lt;&lt;?iII;;;;;;!!;II~!&gt;~ll!z@%a1{)j}?&lt;li+]~&lt;+])|pBxi!!!!lllIl/L/!;;;+v?IxZQ_)X
++++++++&lt;iIIII;;;;;;;;I;;i&lt;II&lt;--U@@#x{?-f}}[{t(__?[?)8Bb&lt;!!!!!llIllI&lt;/zLU}lrO0)I;UL
+++++++&lt;+lI!&gt;&lt;&lt;&lt;i;;;I&gt;+!Il&gt;l&lt;l&lt;iY@@Wv)1t//uc(~fn|{[YqBBBc&gt;ii!!!ll!j00U(lI|O0z_cI(ZC
++++++__lIi&lt;~++_?+l;;&gt;_&gt;l+il_illY@BBCx(jOpUJzQCX/1roaB%BC[ii!!!ll?0u&gt;;]UQOX&gt;!J_;zZx
+-_+_++[lI&gt;~~+-??-!;;IIII&lt;&lt;Ill&gt;&gt;U@B@%*ft|/vXr]+{|to@BBBBM(&gt;i&lt;uv&lt;i[~1jj([&gt;;I|Of:&gt;LZ/
+_-?--]_lIi~+-??-i;;;;IIlllll!iiLBBBB@@0j1]?]]1jrja8BBBB%d(&gt;!n0L]!!!lllI!1LOxI;vvO|
+{{111_l!l!~_-??_IIIIIlll!!!ii&gt;~kB@BB@@8Jvvnnucnt}?+-U8B%8kOz&lt;-0z!i!i~)|{[[-_-/tiUt
+-]{)||]i!l!+-?-iIII!&gt;!!!ii&lt;~&lt;~]8B@BBB@BQrfrvcvj(~lIlli&lt;?/czL0-cX~_?]-_+~~~+-??][{1
+iii&gt;}1))ii!l&lt;_+lll!!l!iii&gt;~~~_nBB@BB@%kLn/fjftti;;I;;;I:II;;II[(}{}[]-_+~+]~i!!&gt;_}
+!iiii+()}&gt;iiii&gt;!lll!!!ii&gt;&lt;~~~-d@@BB%B8cZf//){_l;I;;I;;;;::;;:;::![?-+_?-+&lt;&gt;&gt;&gt;i!!ii
+!i&gt;iii+/(_iii&gt;&gt;&lt;&gt;!!!~(n|~&lt;&lt;!&gt;}#B%%%8M(_r(1}]_Ill!;;:;:;,::I;:;:::I&lt;&lt;~&lt;&lt;&lt;&lt;&lt;&lt;&gt;&gt;&gt;i!i&lt;
+!!i&gt;i!&gt;1|]?+~~&lt;&lt;~iii1k*pv&gt;l;lz%&amp;&amp;8W#p+i&gt;|-+&gt;l;!:I:l:;:;,I;;I:;&lt;&lt;;;I~~~~~~&lt;&lt;&gt;&gt;ii!i&lt;
+!!!!!!&gt;{|?[?_++&lt;+&gt;&gt;&lt;+fOu~!Il[W&amp;8%8*L|+lI&gt;!l;:;,;:;:::;:;;:::::&lt;&gt;!!!l&gt;~&lt;&lt;&lt;&lt;&lt;&gt;&gt;&gt;~??]
+i?-&gt;ii&gt;{1{[[?_~~+~++___+_&lt;;&gt;q&amp;8%%&amp;w!+!!;ll;;I::::;::::;,:::,;li&gt;iI;ll&gt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;i-]]{
+0wa1ii&gt;_(/}-~&gt;&lt;++_-----_?+l[*%%%8MfI+&lt;lI;IIl:;,;:;:;:;:::!}(}i~!!l;;I!&lt;~-/|t}&lt;?}}1
+]Uj~&lt;&lt;&lt;~|j1&gt;&gt;~_-----??-_?-&gt;{WBB%oullIi;:;;l;;;;:::;;:::!{(fjr/+&gt;~i;lIi&lt;1COQLu?_?+_
+&lt;~+__++-|f[+~~~_--]_---+&gt;]r&lt;aB@%L&gt;;;II;;;;I;;:l;;;;;;;iill{qZj+!l;I&gt;!l+[](f{-___~i
+&lt;+_--_?(j(_++&lt;&lt;~_?-+_}]--}1&gt;uBBBwi;I;:;:I;;::::;;;:;I&gt;-~IIl]Z(&lt;I!il!l;&gt;+?]]-_+t+{t
+&lt;~+_-{fj}++____+]_+}{??[_}{~i}/fUc-I;;;;I;;II;I;I;l!&lt;~i!&lt;_~?U1]tf1-++il?_&lt;~&lt;&gt;&gt;)vnf
+&gt;~?)t/{___-__-_++[-?]}-&lt;_{/++&lt;i&lt;!l!!ii!iii!li_i~i+&gt;~&lt;~~+?[|cduUx--?-]_-&gt;iiii!!&gt;rnx
+Xcf)---__----[]_~++[-]-_])L[??--_~&lt;&lt;+++-+++~-+&lt;++___+_-+?}{jOCCn{-+~i!~~&lt;&gt;&gt;&gt;&gt;&gt;i_jj
+]?-i_-__-??~ii&gt;~+~]((-}??{xf]]_-_-_i&lt;&lt;&gt;~&lt;~&lt;&gt;~&lt;+~+---+-[?}(jYc+UYt-_l&lt;+_+&gt;+__~~&lt;&lt;_/
+}-_&gt;i&gt;]]]][{11)((/tjx)?-+}fu1[?_-&lt;_?&lt;!i!&gt;!!&gt;i&lt;&lt;+&lt;[?{{_]1{{)z)~-U/+&lt;__&lt;i;![+~~~&lt;&lt;&lt;}
+]--_&lt;&gt;[{{111)))(|/fjr?~_jYQO1}??]_?[[]]?[]}]&lt;~&lt;+__?][}&gt;?}{|cj|1uj|]+!I;&lt;{[{~~&lt;~_&lt;_
+-_-?[[{{1111))((|tfrf--)fxZ*z1-??-{}})[{{]-~+~&lt;+--+-{(}&gt;+)tU|(t/JY[/xYQ?!~1_~&lt;&lt;{~+
+--?-_{{{{)11))(|/tjx/?&lt;&gt;&lt;[cp0([_--_-~~_~&gt;il&lt;+&lt;++-?--}jr|-i[))}&gt;IIII!l~[)x|1}&lt;&lt;&lt;[}]
+-]{/1{1111)))(|/tXzxx[&gt;&gt;&gt;+}nLr}}]++_&gt;!ii&gt;~~+~--&lt;+--{-+jJx]l::II;I!!&gt;&gt;&gt;__}){1-&gt;&lt;_(|
+11/fvx{1111((||/tvcxu|_~i?]}uU?[[]}}]?-+++i&lt;_{/))[}[_+&gt;!!&gt;I;;;!ii!_-[}?1}~[1[&lt;[||/
+rrnuu){111))|//ttjruj{]-){]_~t/|{((}?[)|)[1fvn|]&lt;!iii&gt;&lt;&lt;+_-&gt;&gt;~_?1]{}})[{+&lt;&lt;}t]](((
+rzJnr1111))(|/ttfrn|?]}1u/1?t?~&lt;&gt;i!&lt;({)({[}+iii&gt;&lt;~+_-{)(|/fx{}}-?]?[-~~[?_~[{&gt;-(||
+r[!_t)1(nx(||/fffrn(?](Xqd/jc)1}?_&lt;&gt;&gt;~]+~~+~&lt;&lt;+_-+[(tjrjjruUQ[}}[}_~_-[?[}???&lt;]|/t
+1(}+tJzj||||//tjjrnvzYYJ0*0ur/1](uzf1-{r|?&lt;_?__-}|xzuxuvcCZmqL}(/){?+-)fft/|f(/xf/
+tuzX/iii&lt;__?(ttfcxnvzYUUJCC[{t/rrr|{fudn)rn1}[}1|r/)1)1_[(|XcrQvxjvUcvj)11]-_&lt;fvx)
+cn()|)_i&lt;{1~}tffcYvvXYUUJLt][[tur//u0w/uvjtcvj/cY/}?_+_!&gt;-_~?[L}Odz--_?]-_-+~&lt;YX{1
+)11|jcCYx)1jnxfjxxucXYYJCr][}[[)tvUULQuUjrLvnxznf]&gt;i&gt;i&gt;&lt;!l~?+_{Cpz-----_++++~/1~{1
+zQ0CUj|ttxxuvvcuxnucXYUC/[[?--+_?{/tfcXvXzuuccUjt?&gt;~~&gt;&lt;&gt;i&gt;&gt;_]]/0QXYJLLJuj{_+~[-_)1
+Lf_+~~~&lt;&lt;~++++_+xvucXYUJLX?]??}?]][1|/fjjj|tnjn))?+&lt;&gt;&gt;&lt;&gt;&lt;&lt;&gt;i&gt;_/J}UqwqXjnOc/fft11||
+vXYf?~&lt;~~+_--+_(XYcuczUJCr}[]][--_?-[}[[}1)1})[}?]~&lt;&lt;i&gt;~&gt;&lt;&lt;&lt;&lt;i[CaaaY}zo*br]]??-)fj
+CLQ0ZwO0Zu]-+1rnnvXcuuncz/]_+__+_-__?]]}[}11){{[-]~_~ii~&lt;~&lt;--?/mpw{UwwwU0Q}(c-_{f/
+[[[}}}[}}}{{{1111)))((|||}[}[[[[}}}?[1[{?][]}?_+~_&lt;_&lt;&gt;&gt;!&gt;~&gt;&lt;&lt;-_:""""",,,,"",,,,,",
+??]??]]]]]]][[[[}}{}{11))]-~&lt;~~~~+++_?--?--_&lt;&gt;i&gt;&lt;&lt;+-_++~+--]{))I,,,,,,,,,,,,,,,,,,
+???????]]]]]]]][}}}}{1111]]?~-?][-?}]-]-?]+++&lt;+i&gt;i&lt;iiii!i!!&gt;&lt;+_;,"",,,,,,,::,,,,,,
+!!!!!iiiii&gt;&gt;&gt;&lt;&lt;~~+__--???__+-_-+_[]?[}][??]?-??+]_-_++~-+~_-__+I,"",,,::::::::::::
+IIIllllll!!!!ii&gt;&gt;&lt;&lt;~~+__+]]-_~&lt;~~~~~~&lt;ii&lt;&gt;+~++~_&lt;_&gt;+&gt;++&gt;+_+~_?[i,",,,::::;;;;;;;;;
+IIIllllll!!!!i&gt;&gt;&gt;&gt;&lt;~~++_+}}[??????-------?-_+~+~&lt;&lt;&lt;+~&lt;&lt;&gt;&lt;&gt;&lt;~~~_l,,,,,::::;;;;;;;;;
+IIlllll!!!!!ii&gt;&gt;&gt;&lt;&lt;~~++_-[]???]--[--?]-?-_-??-+++++_+++&lt;~~+_-?]l,,,,,::::;;;;;;;;;
+lllllll!!!!!ii&gt;&gt;&lt;&lt;&lt;~~++_?1}?-++__???]?]???]??+__&lt;_&lt;-~-+&gt;~&lt;+-~][!,,,,::;;;;;;;;I;I;
+lllllll!!!!iii&gt;&gt;&gt;&lt;&lt;~~~+__[]?____---?][?_??_-~__+_&lt;_~_&gt;~+~_~~]]?!,,,,::;;IIIIIIIIII
+lllll!!!!!!ii&gt;&gt;&gt;&lt;&lt;&lt;~~~++--~&lt;&lt;&lt;~~_-][[[]?-_+~~~~++__-?]???????]}&gt;,,,,:;;;IIIIIIIIII
+</pre>
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+
+ <script>
+      function myFunction(event, node) {
+        console.log("You just clicked this node:", node);
+      }
+    </script>
+		<script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/raphael/raphael.js"></script>
+    <script src="../js/flowchart.js"></script>
+		<script>
+		$('#chart').flowChart();
+		</script>
+
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+
+<script>
+function copyASCII() {
+  	const copyText = document.getElementById("ascii").textContent;
+	navigator.clipboard.writeText(copyText);
+	alert("Copied!");
+}
+function newLoad() {
+	location.reload();
+
+}
+
+</script>
+
+<script type="text/javascript">
+    $("pre.error").css({"background-color":"red","color":"white","display":"block","padding":"0", "margin":"0"});
+    $("pre").css({ "margin" : 0, "padding" : 0 })
+</script>
+
+</body>
+</html>

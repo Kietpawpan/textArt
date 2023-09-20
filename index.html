@@ -1,6 +1,6 @@
-﻿<html>
+<html>
 <head>
-  <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="../css/book.css">
 
  <!script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
  <!script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -28,11 +28,9 @@ pre {
             <article>
 
     <h2 class="chapter-title">ASCII Image</h2>
-	<p>We used the tutorial code of Full-Stack Web Developer, 
-Open-Source Contributor, Seasoned Speaker, named Jonathan Petitcolas, 
-whose source code for converting an image into ASCII art masterpiece is shown at https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html. 
+	<p>This work is for creating a text image from a photo, inspired by Jonathan Petitcolas's tutorial page on image-to-ASCII-art converting code, at https://www.jonathan-petitcolas.com/2017/12/28/converting-image-to-ascii-art.html.
 	</p>
-	<p>We changed the output maximum size to 62 &#215; 62, and the value of grayRamp in the simple version to " .:-=+*#%@"; . 
+	<p>We added a simple version with the value of grayRamp of " .:-=+*#%@"; .
 	</p>
 <br><br>
 <dd>
@@ -40,7 +38,7 @@ whose source code for converting an image into ASCII art masterpiece is shown at
 
 	<input 
 		type="file" 
-		name="picture" />
+		name="picture" /><br>
 
 	<button 
 		onclick="copyASCII()">Copy
@@ -130,6 +128,73 @@ lllllll!!!!iii&gt;&gt;&gt;&lt;&lt;~~~+__[]?____---?][?_??_-~__+_&lt;_~_&gt;~+~_~
 lllll!!!!!!ii&gt;&gt;&gt;&lt;&lt;&lt;~~~++--~&lt;&lt;&lt;~~_-][[[]?-_+~~~~++__-?]???????]}&gt;,,,,:;;;IIIIIIIIII
 </pre>
 
+<!--
++++++++_??----?]]]]]][[[}}}]~~~~~~~~~~~&lt;&lt;&gt;+~]z/_&lt;&gt;&gt;&gt;&lt;&gt;i!!i&gt;!lllllII
+~+++~~~~_-----??]?]?][[}}}_&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;&gt;&gt;i&lt;&lt;&gt;&lt;&gt;&lt;&gt;&gt;ii!!&gt;!ll!?(tfjjff
+~~~~~~~~~_-?-???????[[}}]&lt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;i!!i&lt;&gt;&gt;&gt;i&gt;i!!!!lllllllII;l_)f
+~~&lt;&lt;&lt;&lt;~~&lt;~--------]}}}]&gt;iiii&gt;&lt;iii!!!!!!!?({+&gt;&gt;&gt;!!ll~j)illlII;;;;:::
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;-?---?[}[+!!!i?fXJcLQn)~!l&gt;(f/|)1{?&lt;!!lizm0+IIII;;;;!})/
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;&gt;&lt;+???--&lt;!i!!!_oB%&m*8&%8Wq&lt;trxv()1{}[&lt;lllIIIIII;;;;;;;:;+
+&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;~?+i!!!!!!!O%%*wU|/uJqM8%%pxt/()1{}[]&gt;lll!i!llI;:::::::I
+&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;+~_i!!!!!~*%#U1_&lt;!ll&gt;}Xa%BB%X/|()1{}[?il&gt;+?-&lt;!I;;:::;&gt;xL
+&lt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;~+_&gt;!!!!!!i0B&Y{_~&lt;&lt;&gt;&gt;&gt;&lt;_fpBBBWvt/()11{[?!i~-_&gt;!I;;::;l;::
+&lt;&gt;&gt;&lt;&lt;&gt;&lt;~++_!ll!!&gt;~&lt;]8BWc)[_+~&gt;iii&lt;?x8@B@pujttf((1{i!!i!llII;;lI;&lt;fU
+&gt;&gt;&lt;&lt;&lt;~+__&lt;ll!!+?~?~d@@d//ff)[]tCCj/]/8%wb]fj|}+&gt;i&lt;&gt;!!&gt;i!iiiiI+zQQCU
+~l!i~_++l!ii}&lt;+i!-1%W%L)npbY|-uOkbO}_JXY81i!!!l!llll!&gt;Il!ilI;;;;;l/
+;;;;;;l!lII&lt;+!_il!{@BMC{(//{-!&gt;?([~~_)ruBL&gt;!!!!lllll?Cc1&lt;;;!1{;[UOt
+I;;;I;;;;I;I&lt;lI!+?|@@W01[+]1]++1)+~_][+*BM}!!!!!lIlI!Il~|UQnl]0Oz!:
+&gt;&lt;iI;;;l&lt;iII~!il&lt;~)@@@O(1(jfvYv[)u/{[/ZBBBC&lt;!i!!!llI?YQQz+;+L00?rl]
+~+-_&gt;;;l++l!il~+ll)@B@ov(|XLLCJJ0Ut)}00%%Bq1ii!!!!l&lt;QJ{l&gt;/COQ1Iu1;x
+_-??_IIIIIIi_ill!&lt;(@B@BBc/t/cJX)_[||OBB%BB&|+!&gt;1f~&gt;)-{XJXj-;;-0cIIX
+-??+I;;;IIIlllll!~/@BBBB%mj)[]?-]|rrb@BBBB%k|i!n0Q[!!!lllII+zOU!:tX
+---i;;IIIllll!!ii&gt;v@@BBB@@dcuxxxvvj){1{LWBB%aZn&gt;[QJ~!!i&gt;?|j(|{~~fc+
+--_lIII!&gt;!!!i&gt;~~&lt;+QB@BBBB@anfrucXx/]i;ll&gt;+[x0wOw}nC+~?]--++~~+-??][
++-~IIli!!!ii&gt;&gt;~~+]b@@BBB@&0c/tjjft?;III;;I;III;!i]j}}}[]-_+~~?_&lt;i&gt;~
+iiillll!!ii&gt;&gt;&lt;~++/8@BBBBBZxc/t/1}&gt;lII;;I;;:;:;;;;::I[[?__-__&lt;&gt;&gt;&gt;i!!
+i&gt;&lt;&lt;!!!i~()~&lt;~&gt;i&gt;CBB%B8%O[[t1}[?llIll;:;:::::l;:;;,:;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;&gt;&gt;i!
+&lt;&lt;&gt;~&lt;ii+zMLm?!I!]888&WWMj&lt;!(]_~!;I:;:;:::::;I:;:;i~l;I~~~~~~&lt;&lt;&gt;&gt;&gt;ii
++_~~+&gt;&gt;&lt;]0p/&lt;II&gt;O&88%#bc-!I&gt;!lI:I:;:I:;:::;;::,::&gt;&gt;!!!l&gt;~&lt;&lt;&lt;&lt;&lt;&gt;&gt;i&lt;?
+?+&lt;+~~+++_++_I;(#88B8*j_&lt;!!I!II;::::::::::::,::;Ii&gt;&gt;I;II&gt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;i-]
+~&lt;~++_----_--ilC8%B88p&gt;&gt;+!l;;I!;;:;:;:;:::::I?1{&lt;&lt;i!l;;I!&gt;&lt;+1)([&lt;-}
+&lt;+-----??-_-?~iOBB%%O&gt;lI!I:;;II;I:;:;:;:;:I[(ftx|_i~iI!li&lt;]JZ0QX]_?
+~~+_-?-----&lt;-{+tBBB*)I;II;I;IIl;;;:;;:;;;l&gt;Ii_0mv-i!;;iil~[}/r(?__-
+~&gt;~+??-+-}-?[[_-oB@&(l;;;:;;;;;:;:;:;:;;!+_iII?qr+llil!I:!+-?[--+/+
+____[+-1-][?[}-&gt;-|jYC(!;;;;I:;;;;;;;;Il&gt;~i!&lt;+&gt;+Yj+(j|?++!l_-&lt;&lt;&lt;&lt;&gt;1v
+-_~~?]~[_[+~?t?~&lt;&lt;&gt;!!l!&gt;!!ii&gt;!l!~~&lt;&gt;~&lt;&lt;&lt;~~+-])nbUzv]---?_-&gt;&gt;i&gt;i!!if
+?]?_++_?_[+?[u/?-]-++&lt;~_~+_+-+__~+_~-~-~+__?[{/QOLu)-++&gt;l&lt;~&lt;&gt;&gt;&gt;&gt;&gt;i+
+ii&gt;~&lt;+{|]?[-{|n[]]-_-_&lt;~i&lt;&lt;&lt;_&lt;~&lt;!+&lt;+_?-+_]]}(fzQ+YUj?_l&gt;~-+~~__+~&lt;&lt;
+{1)(|tfrr[__])z{}[__+-_~&gt;ii&gt;!!!i~&lt;+~]]{1-?{}}{nt~&lt;Xj_&lt;+_&lt;i;I[+~~~&lt;&lt;
+)))(/tjrf~~1zJOX}[?-?]]][?[[][?__&lt;++-_]]{&lt;_[{)nr/1jr|}-iI;!{}}~~&lt;~+
+))(|/tjr[+{/jckk/?-~?{}{}])}}?&lt;_~&lt;-+-+-?(}+&gt;{1Y/)t/UC)|xYQ]!&lt;1_&lt;&lt;&lt;}
+)((/tfrft&lt;i&lt;_t0kn}??-_-&lt;__+&lt;!!~~&gt;~~--]-?tr/]&gt;?)11~lIII!l&gt;]1r/{{&lt;&lt;&lt;]
+)(|tjYrn|~&lt;&gt;&gt;?/Uz{}]--&lt;i&gt;ii&gt;i~-~--&lt;~_?{?~/Yc}l;:;I;Il!&gt;ii__[){1-&lt;&lt;_
+(|//fzrnv[~&lt;_[]|Q[]?[}[?]?++~&gt;++1)))]{[-+&gt;ii&gt;l;:;l!i!+-[{]1}~]1}~[|
+/|/tfrxn)[?[1}-+{v(}))1}-1()([/njj]_!!iii&gt;&lt;+__+&gt;~_-{[}{}([1_&lt;&lt;[/]?(
+|t/tjxn[][[ff([]1+~&gt;i!&gt;{()1{}[_&gt;ii&gt;&lt;~+_-}1(|/fr)[{??]][?~~}?_+]{&lt;_(
+//ffjxu[]}vQMz/vt){[-~&gt;&gt;&lt;]?+~++&lt;&lt;~_-+?)|jrjjrnUp)}{[}-~_-]]]}???~?/
+/tfrrxncXYUCadzvt|]{fUu|][tf[~+--__](jzvxuunJOmmO1)/(1]+_1tfft|f|/x
+/tfvnxucXYUUJC|[|/frnf1|nmO(fn/}}[}|jj)}1)-]1}vXrCXrxuUcvj)11]-_&gt;/c
+/ffjLzuzYYUUCX[[](xut)xOOntcu/xXxtuUt1]_+_&lt;&gt;~+_-[Q1CdY--_?]-_-+~&lt;YX
+nrfrxnczYYUJc1[[[]}|rJJLLzvnrUcurcnr}&gt;iii&lt;&lt;ll~_+_}zpC]--?-_++++~)1~
+uuvnxnuzXYJz{[]--?__}(||ncXXuuXuzcx/[~&lt;&gt;&gt;&lt;&gt;&lt;&gt;&gt;~]?100UXJLCJcr|}]_]?_
+++_)zuvzYUJCLt]??]][?-{||ftfj|xjnj()]-~&gt;&lt;&gt;&lt;+&lt;&lt;&lt;i+]O}XpppJ/t0z1))){1
+_+]uzznucXJCC[[]][]?-]?}][}}{1}{{{[[}~~&gt;i&gt;&lt;&gt;&lt;&lt;&lt;&lt;i_UhaaU1za*df[???-)
+?frxnvcunnuvx[?-__+____??]]]1{{)?1?[]__&lt;&lt;&gt;&lt;~~&gt;__?{CZ0)c00QcJQ]{z?+[
+{{111)1)((||1?[[[}[{}}}}[}}]}[?[~-&lt;+_~_&lt;&lt;&gt;!&lt;&lt;i~&lt;_?;&quot;&quot;&quot;&quot;&quot;&quot;,,,,,,,,&quot;&quot;
+[[[[}}{{111)}-_~~~+~+++_-__-__+&lt;&gt;!!i&gt;~__+~~~_-?[{)i,&quot;,,,,,,,,,,,,,,
+][][}}}{{111[]?_+-]-[{]-}[-]-_?__+&lt;&gt;i&lt;i&gt;iii!ii&gt;&lt;_-l,&quot;&quot;,,,,,,,::,,,,
+&gt;&gt;&lt;~~++_---?_+++_++?_+]}]]]?]]??]-~--+-_+__+_--_-_!,,,,,,::::;;::::
+ii&gt;&gt;&gt;&lt;&lt;~~++_][-_+~+++~~~~&gt;i&gt;~&lt;&gt;~i~~~~&lt;~i~&gt;&lt;_+&lt;~+_-~,,&quot;,,:::::;;;;;;
+!i&gt;&gt;&lt;&lt;~~~++_?}}]]?]]?--__--_-??-+__~~+__~+&lt;&lt;&lt;&lt;~++-&lt;,&quot;,,,,:::;;;;;;;
+ii&gt;&gt;&gt;&lt;&lt;~~++_?]?-]??[]_??-?--]--]_-~_+________-?][{&lt;,,,,::::;;;;;;;;
+ii&gt;&gt;&lt;&lt;&lt;~~++_}{]]--__????]-[??]??~_++++_+_&lt;~+~_+~?[~,,,,::;;I;;;;;I;
+i&gt;&gt;&gt;&lt;&lt;&lt;~+~+_-}}?-__+++-?[]??_-_+]~?~~~~+i+~~+&gt;_]?-&lt;,,,,::;;;IIIIIII
+i&gt;&gt;&gt;&lt;&lt;~~+++_]-+&lt;&lt;&lt;~~+_??]]]]??-_++++__---_____--?[_,,,,::;;IIIIIIII
+i&gt;&gt;&gt;&lt;&lt;~~~~_-}[]--}?+]?--_+_+~+~~&lt;&lt;&gt;&gt;&gt;&gt;&lt;&gt;&lt;~~+~~~~+_&lt;,,,:;;;IIIllllll
+
+</pre>
+
+-->
 
             </article>
             <footer>
